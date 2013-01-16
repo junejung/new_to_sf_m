@@ -1,13 +1,19 @@
 <head>
-  <title>new_to_sf_m</title>
+  <title>New to SF</title>
 </head>
 
 <body>
-  {{> hello}}
+  <div>{{> top_bar}}</div>
+  <div>
+    {{renderPage}}
+  </div>
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="top_bar">
+  <ul>
+    {{#each menu}}
+      <a href="{{this.url}}">{{this.name}}</a> |
+    {{/each}}
+    {{loginButtons}}
+  </ul>
 </template>
